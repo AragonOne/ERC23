@@ -1,13 +1,13 @@
 pragma solidity ^0.4.8;
 
- /* ERC23 additions to ERC20 */
+ /* ERC223 additions to ERC20 */
 
-import "../interface/ERC23.sol";
-import "../interface/ERC23Receiver.sol";
+import "../interface/ERC223.sol";
+import "../interface/ERC223Receiver.sol";
 
 import "zeppelin/token/StandardToken.sol";
 
-contract Standard23Token is ERC23, StandardToken {
+contract Standard223Token is ERC223, StandardToken {
   //function that is called when a user or another contract wants to transfer funds
   function transfer(address _to, uint _value, bytes _data) returns (bool success) {
     //filtering if the target is a contract with bytecode inside it
@@ -32,7 +32,7 @@ contract Standard23Token is ERC23, StandardToken {
 
   //function that is called when transaction target is a contract
   function contractFallback(address _origin, address _to, uint _value, bytes _data) private returns (bool success) {
-    ERC23Receiver reciever = ERC23Receiver(_to);
+    ERC223Receiver reciever = ERC223Receiver(_to);
     return reciever.tokenFallback(msg.sender, _origin, _value, _data);
   }
 

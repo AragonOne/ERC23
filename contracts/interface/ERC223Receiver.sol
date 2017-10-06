@@ -1,7 +1,7 @@
 pragma solidity ^0.4.8;
 
 /*
-Base class contracts willing to accept ERC23 token transfers must conform to.
+Base class contracts willing to accept ERC223 token transfers must conform to.
 
 Sender: msg.sender to the token contract, the address originating the token transfer.
           - For user originated transfers sender will be equal to tx.origin
@@ -16,6 +16,6 @@ From, origin and value shouldn't be trusted unless the token contract is trusted
 If sender == tx.origin, it is safe to trust it regardless of the token.
 */
 
-contract ERC23Receiver {
+contract ERC223Receiver {
   function tokenFallback(address _sender, address _origin, uint _value, bytes _data) returns (bool ok);
 }
