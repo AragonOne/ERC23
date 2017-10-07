@@ -3,7 +3,7 @@
 const assertJump = require('./helpers/assertJump');
 var StandardTokenMock = artifacts.require("./helpers/StandardTokenMock.sol");
 
-contract('Standard23Token', function(accounts) {
+contract('Standard223Token', function(accounts) {
 
   it("should return the correct totalSupply after construction", async function() {
     let token = await StandardTokenMock.new(accounts[0], 100);

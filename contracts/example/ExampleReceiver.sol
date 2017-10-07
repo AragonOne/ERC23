@@ -1,8 +1,8 @@
 pragma solidity ^0.4.8;
 
-import "../implementation/StandardReceiver.sol";
+import "../implementation/Standard223Receiver.sol";
 
-contract ExampleReceiver is StandardReceiver {
+contract ExampleReceiver is Standard223Receiver {
   function foo(/*uint i*/) tokenPayable {
     LogTokenPayable(1, tkn.addr, tkn.sender, tkn.value);
   }

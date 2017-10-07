@@ -1,10 +1,10 @@
 pragma solidity ^0.4.8;
 
- /* ERC23 additions to ERC20 */
+ /* ERC223 additions to ERC20 */
 
-import "../interface/ERC23Receiver.sol";
+import "../interface/ERC223Receiver.sol";
 
-contract StandardReceiver is ERC23Receiver {
+contract Standard223Receiver is ERC223Receiver {
   Tkn tkn;
 
   struct Tkn {
